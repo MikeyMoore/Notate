@@ -3,14 +3,16 @@
 import React, { Component } from 'react';
 
 import {
+  AlertIOS,
   StyleSheet,
   View,
   Dimensions,
   TouchableHighlight,
   Text,
-  CameraRoll,
+  CameraRoll
 } from 'react-native';
 import Camera from 'react-native-camera';
+
 
 var styles = StyleSheet.create({
   description: {
@@ -26,12 +28,23 @@ var styles = StyleSheet.create({
   }
 });
 
+
 class Game extends Component {
+  sendReview(){
+    AlertIOS.alert(
+      'Make sure you first take a picture of the board at the starting position',
+      '',
+      [
+        {text:'gotcha', onPress: ()=> console.log('okiedokie!')}
+      ]
+    )
+  }
   render() {
+    {this.sendReview()}
     return (
       <View style={styles.container}>
-        <Camera
-          style={styles.preview}
+        <Camera 
+          style={styles.preview} 
           style={{width: Dimensions.get('window').width, height: Dimensions.get('window').width}}
           aspect={Camera.constants.Aspect.fill}
           orientation={Camera.constants.Orientation.portrait}
