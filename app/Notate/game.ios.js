@@ -37,7 +37,7 @@ class Game extends Component {
           type={Camera.constants.Type.back}
           flashMode={Camera.constants.FlashMode.on} 
           captureMode={Camera.constants.CaptureMode.still}
-          captureTarget={Camera.constants.CaptureTarget.cameraRoll}
+          captureTarget={Camera.constants.CaptureTarget.disk}
           ref={(cam) => {
             this.camera = cam;
           }}>
@@ -47,8 +47,21 @@ class Game extends Component {
 		);
 	}
 	takePicture() {
-    this.camera.capture()
-      .then((data) => console.log(data))
+    this.camera.capture(function(err, data) {
+      this.setState({photo: data});
+      console.log(err, data);
+      console.log('just took a picture');
+    })
+      // .then( (data) => console.log(data) )
+      .then( (data) => console.log(data) )
+      .then(fetch('http://localhost:3000/posts', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ imageData: (data) => console.log(data)})
+      }))
       .catch(err => console.error(err));
   }  
 }
