@@ -25,11 +25,11 @@ var styles = StyleSheet.create({
 	}
 });
 
-class Notes extends Component {
+class Load extends Component {
 	render() {
 		return (
 			<WebView
-				// source={{uri: 'http://172.16.50.140:3000/sync_files'}}
+				// source={{uri: 'http://172.16.50.140:3000/sync_files/list'}}
 				source={{uri: 'https://github.com/facebook/react-native'}}
 				style={{marginTop: 20}}
 			/>
@@ -37,4 +37,4 @@ class Notes extends Component {
 	}
 }
 
-module.exports = Notes;
+module.exports = Load;

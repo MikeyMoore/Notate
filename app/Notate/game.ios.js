@@ -68,9 +68,9 @@ class Game extends Component {
       console.log(err, data);
       console.log('just took a picture');
     })
-      // .then( (data) => console.log(data) )
       .then( (data) => console.log(data) )
-      .then(fetch('http://172.16.50.140:8000/sync_files', {
+      // .then(fetch('http://172.16.50.140:3000/sync_files/list/', {
+      .then(fetch('http://localhost:3000/polls/', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -80,11 +80,35 @@ class Game extends Component {
       }))
       .catch(err => console.error(err));
   }  
+
+  // takePicture() {
+  //    var that = this
+  //    fetch("https://tiptap-api.herokuapp.com/tippees", {
+  //      method: "POST",
+  //      headers: {
+  //      'Accept': 'application/json',
+  //      'Content-Type': 'application/json'
+  //    }, body: JSON.stringify({tippee: that.state})})
+  //    .then((response) => response.json())
+  //    .then(that.navigate("main"))
+  //    .done();
+  //  }
+
+
   endGame() {
-    // 
+    var that = this;
+    // fetch("http://172.16.50.140:3000/sync_files", {method: "GET"})
+    fetch("http://localhost:3000/polls", {method: "GET"})
+    .then((response) => response.json())
+    // .then((responseData) => {
+    //   that.setState({firstName: responseData[0].first_name})
+    //   that.setState({lastName: responseData[0].last_name})
+    //   that.setState({paymentUrl: responseData[0].payment_url})
+    //   that.setState({photoUrl: responseData[0].photo_url})
+    // .done();
+    // }
   };
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
