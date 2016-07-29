@@ -58,7 +58,7 @@ class Game extends Component {
           }}>
           <Text style={styles.capture} onPress={this.takePicture.bind(this)}></Text>
         </Camera>
-        <Text style={styles.endGame} onPress={this.endGame.bind(this)}>[END GAME]</Text>
+        <Text style={styles.endGame} onPress={this.endGame.bind(this)}>END GAME</Text>
       </View>
     );
   }
