@@ -22,7 +22,7 @@ class Notate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'game'
+      selectedTab: 'load'
     };
   }
 

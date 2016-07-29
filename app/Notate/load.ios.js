@@ -26,8 +26,6 @@ var styles = StyleSheet.create({
 	},
 	webview: {
 		marginTop: 20,
-		textAlign: 'center',
-		fontSize: 20,
 		alignItems: 'center'
 	},
 	 largeButton: {
@@ -47,16 +45,17 @@ var styles = StyleSheet.create({
 class Load extends Component {
 	render() {
 		return (
-			// <WebView
-				// style={styles.webview}
-				// source={{uri: 'http://172.16.50.140:3000/sync_files/list'}}
-				// // source={{uri: 'https://github.com/facebook/react-native'}}
-			// />
-			<View style={styles.container}>
-				<Text style={styles.largeButton} onPress={this.chooseFiles.bind(this)}>Choose Files</Text>
-				<Text style={styles.largeButton} onPress={this.uploadFiles.bind(this)}>Upload Files</Text>
-				<Text style={styles.largeButton} onPress={this.seeNotations.bind(this)}>See Notations</Text>
-			</View>
+		//	<WebView
+		//	 style={styles.webview}
+		//	 source={{uri: 'http://localhost:8000/sync_files/list'}}
+		//	 // source={{uri: 'https://github.com/facebook/react-native'}}
+		//	/>
+
+			 <View style={styles.container}>
+			 	<Text style={styles.largeButton} onPress={this.chooseFiles.bind(this)}>Choose Files</Text>
+			 	<Text style={styles.largeButton} onPress={this.uploadFiles.bind(this)}>Upload Files</Text>
+			 	<Text style={styles.largeButton} onPress={this.seeNotations.bind(this)}>See Notations</Text>
+			 </View>
 		);
 	}
 	chooseFiles() {
