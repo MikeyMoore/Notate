@@ -11,7 +11,7 @@ import {
   View,
   TouchableHighlight
 } from 'react-native'
-
+import Icon from 'react-native-vector-icons/Foundation';
 import Camera from 'react-native-camera';
 
 var Game = require('./game.ios');
@@ -22,7 +22,7 @@ class Notate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'game'
+      selectedTab: 'load'
     };
   }
 
@@ -30,9 +30,9 @@ class Notate extends Component {
     return (
       <TabBarIOS selectedTab={this.state.selectedTab}>
 
-      <TabBarIOS.Item
+      <Icon.TabBarItem
       selected={this.state.selectedTab === 'game'}
-      // icon={{uri:'gameplay'}}
+      iconName="crown"
       title='Game'
       onPress={() => {
         this.setState({
@@ -40,11 +40,11 @@ class Notate extends Component {
         });
       }}>
       <Game />
-      </TabBarIOS.Item>
+      </Icon.TabBarItem>
 
-      <TabBarIOS.Item
+      <Icon.TabBarItem
       selected={this.state.selectedTab === 'load'}
-      // icon={{uri:'notations'}}
+      iconName="upload"
       title="Upload"
       onPress={() => {
         this.setState({
@@ -52,11 +52,11 @@ class Notate extends Component {
         });
       }}>
       <Load />
-      </TabBarIOS.Item>
+      </Icon.TabBarItem>
 
-      <TabBarIOS.Item
+      <Icon.TabBarItem
       selected={this.state.selectedTab === 'notes'}
-      // icon={{uri:'notations'}}
+      iconName="list-bullet"
       title="Notations"
       onPress={() => {
         this.setState({
@@ -64,7 +64,7 @@ class Notate extends Component {
         });
       }}>
       <Notes />
-      </TabBarIOS.Item>
+      </Icon.TabBarItem>
 
       </TabBarIOS>
     )
