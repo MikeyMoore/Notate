@@ -11,7 +11,7 @@ from sync_files.models import Document, Notations
 import sqlite3
 
 def index(request):
-	finalNotation = "Rooki - Play a game!"
+	finalNotation = "Rooki, play your games!"
 
 	# This makes sure the web view doesn't break without first
 	# Uploading files

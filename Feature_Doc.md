@@ -1,5 +1,5 @@
-# Notate
-- The chess notation app.  Can only be used in conjunction with phone stand.
+# Rooki
+- The chess notation app.
 
 ## Members
 - Q: Mikey Moore 
@@ -7,8 +7,8 @@
 - R: Sam Heinz
 - B: Justin Wong
 
-## Stack
-- MySQL/Firebase
+## Stack/Technologies Used
+- MySQL
 - Django
 - React Native
 - Python (+ OpenCV)
@@ -30,14 +30,13 @@
 
 ## End the game with the React Native application
 - Level of importance: High
-- Status: Not Started
+- Status: In Progress
 - User must be able to end their game to force the Django backend to process their game and send the chess notation results to the React Native application
 
-## Sending a photo to Firebase from React Native application
+## Sending a photo to Django backend from React Native application
 - Level of importance: High
-- Status: In Research
-- Must send a photo to Firebase utilizing React Native application
-- Firebase must receive a photo from React Native application
+- Status: In Research (soon to host server online to make this possible)
+- Must send a photo to backend utilizing React Native application
 
 ## Finding movement with OpenCV
 - Level of importance: High
@@ -46,23 +45,18 @@
 
 ## Returning coordinates of start and end points of movement in a digestable format
 - Level of importance: High
-- Status: In Progress 
+- Status: Complete 
 - Python program must return the starting and ending coordinates 
 
 ## Python algorithm to generate chess notation
 - Level of importance: High
-- Status: In Progress
+- Status: Complete
 - Python program must be able to accept coordinates sent to it and return the chess notation for the move
 
 ## Django skeleton 
 - Level of importance: High
 - Status: Complete
 - Must have a Django backend skeleton that will be able to hold the Python algorithm and OpenCV logic as well as communicating with Firebase and the React Native application
-
-## Django communication with Firebase
-- Level of importance: High
-- Status: In research
-- Django backend must be able to receive information from Firebase
 
 ## Django communication with React Native application
 - Level of importance: High
@@ -74,8 +68,4 @@
 - Status: In research
 - Application must be able to notify the Django app that the game has ended
 
-## Firebase communication with Django
-- Level of importance: High
-- Status: In research
-- Django backend must be able to receive information from Firebase
 

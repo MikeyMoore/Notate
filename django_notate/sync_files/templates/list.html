@@ -2,15 +2,24 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Notate (Rooki)</title>
+        <title>Rooki</title>
         <style>
-           .notation-list{font-family: "bookman old style"; border-style: dotted; font-size: 150%; padding: 25px; margin: auto; }
-           p{font-family: "bookman old style"; text-align: center }
+           .notation-list{font-family: "helvetica"; border-style:solid; font-size: 150%; padding: 25px; margin: auto; border-radius: 8px; width:30%; background-color:#1496BB; color:white;}
+           h1{font-family: "helvetica"; text-align: center; color:#0D3D56; }
+           .button{text-align:center; width: 15%; height:30px; margin:auto; border-radius: 5px; background-color: #c9d7e8; padding-top:15px; line-height:40px;}
+           a{text-decoration:none; color:#0D3D56; font-family:"helvetica";}
+           p{text-align:center;}
+           ul{text-align:center;}
+           .selectedfiles{color:#0D3D56;}
+           /*Here is my hack to center the choose file button*/
+           /*#id_docfile{color:#1496BB;margin-left:155px;}*/
        </style>
     </head>
 
     <body>
+    <h1>ROOKI</h1>
         <!-- List of uploaded documents -->
+    <div class="selectedfiles">
         {% if documents %}
             <ul>
                 {% for document in documents %}
@@ -20,7 +29,7 @@
         {% else %}
             <p>No documents.</p>
         {% endif %}
-
+    </div>
         <!-- Upload form. Note enctype attribute! -->
         <div class="notation-list">
         <form action="{% url "list" %}" method="post" enctype="multipart/form-data">
@@ -29,15 +38,18 @@
 
             <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
 
-            <p>
-                {{ form.docfile.errors }}
-                {{ form.docfile }}
-            </p>
-
+            <div class="choosefile">
+                <p>
+                    {{ form.docfile.errors }}
+                    {{ form.docfile }}
+                </p>
+            </div>
             <p><input type="submit" value="Upload"/></p>
         </form>
         </div>
-        <a href="/sync_files">See Notation</a>
+        <a href="/sync_files">
+            <div class="button">See Notation
+        </div></a>
     </body>
 
 </html>
