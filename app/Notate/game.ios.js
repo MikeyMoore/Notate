@@ -24,8 +24,38 @@ var styles = StyleSheet.create({
     flex: 1,
      justifyContent: 'center',
      alignItems: 'center',
-     backgroundColor: '#123456'
-  }
+     backgroundColor: '#1496BB'
+  },
+  blankText: {
+    margin: 50
+  },
+  preview: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  capture: {
+    flex: 1,
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    color: '#000',
+    // margin: 130,
+    // padding: 80,
+    fontSize: 24,
+    opacity: .09
+  },
+  endGame: {
+    flex: 0,
+    justifyContent: 'center',
+    textAlign: 'center',
+    margin: 40,
+    padding: 20,
+    backgroundColor: 'white',
+    color: '#0D3D56',
+    fontWeight: 'bold',
+    borderRadius: 9,
+    width: 200
+  }  
 });
 
 
@@ -109,38 +139,5 @@ class Game extends Component {
     // }
   };
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'black'
-  },
-  blankText: {
-    margin: 50
-  },
-  preview: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  capture: {
-    flex: 1,
-    backgroundColor: '#fff',
-    borderRadius: 5,
-    color: '#000',
-    // margin: 130,
-    // padding: 80,
-    fontSize: 24,
-    opacity: .09
-  },
-  endGame: {
-    flex: 0,
-    justifyContent: 'center',
-    textAlign: 'center',
-    margin: 40,
-    padding: 20,
-    backgroundColor: 'white',
-    borderRadius: 9
-  }
-});
 
 module.exports = Game;
